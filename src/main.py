@@ -42,7 +42,7 @@ async def create_upload_file(file: UploadFile, UUID: UUID_ID, session: AsyncSess
     os.chdir('/tmp/storage/attachment')
     name_wav = attach.content['file_id']
     os.rename(name_wav, f'{name_wav}.mp3')
-    return {"url": f"http://0.0.0.0:8000/record?id={attach.id}&user={UUID}"}
+    return {"url": f"http://localhost:8000/record?id={attach.id}&user={UUID}"}
 
 
 @app.get("/record")
